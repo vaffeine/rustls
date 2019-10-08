@@ -633,9 +633,9 @@ impl Codec for ClientExtension {
                 let schemes = SupportedSignatureSchemes::read(&mut sub)?;
                 ClientExtension::SignatureAlgorithms(schemes)
             }
-            ExtensionType::ServerName => {
+            /*ExtensionType::ServerName => {
                 ClientExtension::ServerName(ServerNameRequest::read(&mut sub)?)
-            }
+            }*/
             ExtensionType::SessionTicket => {
                 if sub.any_left() {
                     ClientExtension::SessionTicketOffer(Payload::read(&mut sub)?)
